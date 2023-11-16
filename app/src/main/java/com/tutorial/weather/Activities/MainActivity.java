@@ -1,8 +1,9 @@
-package com.tutorial.weather.Activitis;
+package com.tutorial.weather.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         initRecyclerview();
+
+        next7day();
+    }
+
+    private void next7day() {
+        TextView tomorrow = findViewById(R.id.next7day);
+
+        tomorrow.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, FutureActivity.class));
+        });
+
+
+
     }
 
     private void initRecyclerview() {
